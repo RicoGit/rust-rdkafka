@@ -55,7 +55,6 @@ fn main() {
     } else {
         if !Path::new("librdkafka/LICENSE").exists() {
             println_stderr!("Setting up submodules");
-            run_command_or_fail("../", "git", &["submodule", "update", "--init"]);
             run_command_or_fail("../", "git", &["submodule", "update", "--remote"]);
         }
         println_stderr!("Building and linking librdkafka statically");
